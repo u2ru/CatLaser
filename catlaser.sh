@@ -133,10 +133,16 @@ function attack {
 }
 
 function audit {
-	echo -e $(gnome-terminal bash -x airodump-ng $netdevice)
+	# echo -e $(gnome-terminal bash -x airodump-ng $netdevice)
+	scan=$(nmcli -f SSID,BSSID,CHAN,RATE,SECURITY,SIGNAL dev wifi)
+	while read line; do
+			echo -e "\t$line"
+	done <<< $scan
+	echo
 	echo -n ">> Enter BSSID: "; read bssid
 	echo -n ">> Enter [CH] Channel: "; read channel
-	echo "$(ps -e|grep airodump-ng|kill -9 $(awk '{print $1}') &> /dev/null)"
+	echo
+	# echo "$(ps -e|grep airodump-ng|kill -9 $(awk '{print $1}') &> /dev/null)"
 	sleep .5
 	echo ">> BSSID: $bssid"
 	echo ">> Channel: $channel"

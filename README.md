@@ -3,6 +3,6 @@ Wireless network auditor
 
 ## Usage
 ```
-git clone https://github.com/u2ru/CatLaser.git && cd CatLaser/ && sudo ./catlaser.sh
+git clone https://github.com/u2ru/CatLaser.git && cd CatLaser/ && sudo chmod +x ./catlaser.sh && sudo ./catlaser.sh
 ```
 

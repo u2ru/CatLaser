@@ -1,5 +1,5 @@
 # CatLaser
-Wireless network auditor
+Wireless network auditor/pentesting tool
 
 ## Usage (one line command)
 ```
